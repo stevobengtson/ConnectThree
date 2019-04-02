@@ -35,10 +35,20 @@ public class Board : MonoBehaviour
 
     private void Setup()
     {
+        InitBoard();
+    }
+
+    public void InitBoard()
+    {
         for (int column = 0; column < width; column++)
         {
             for (int row = 0; row < height; row++)
             {
+                if (allDots[column, row] != null)
+                {
+                    Destroy(allDots[column, row]);
+                    allDots[column, row] = null;
+                }
                 GameObject backGroundTile = CreateBackgroundTile(column, row);
                 CreateDot(column, row, false);
             }

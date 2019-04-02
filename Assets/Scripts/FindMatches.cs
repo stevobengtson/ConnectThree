@@ -70,7 +70,7 @@ public class FindMatches : MonoBehaviour
                 Dot downDotComp = downDot.GetComponent<Dot>();
                 if (currentDot.dotType == upDotComp.dotType && currentDot.dotType == downDotComp.dotType)
                 {
-                    CheckHorizontalBombs(currentDot, upDotComp, downDotComp, row, column);
+                    CheckVerticalBombs(currentDot, upDotComp, downDotComp, row, column);
                     MatchAndTrackDots(new Dot[] { upDotComp, downDotComp, currentDot });
                 }
             }
